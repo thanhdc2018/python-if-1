@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>python-if-1</title>
+</head>
+<form>
+    <button type="button" onclick="chiahet(parseInt(prompt('Nhập số a:')),parseInt(prompt('Nhập số b: ')))">Bài 1:Chia hết</button>
+    <button type="button" onclick="hocsinh(parseInt(prompt('Nhập tuổi:')))">Bài 2:Tuổi học lớp 10</button>
+    <button type="button" onclick="soam(parseInt(prompt('Nhập số để kiểm tra:')))">Bài 3: Kiểm tra số âm</button>
+    <button type="button" onclick="solonnhat(parseInt(prompt('Nhập số a:')),parseInt(prompt('Nhập số b: ')),parseInt(prompt('Nhập số c: ')))">Bài 4:Số lớn nhất</button>
+    <button type="button" onclick="phanloai(parseInt(prompt('Nhập điểm kiểm tra:')),parseInt(prompt('Nhập điểm giữa kỳ:')),parseInt(prompt('Nhập điểm cuối kỳ: ')))">Bài 5:Xếp hạng</button>
+    <button type="button" onclick="hoahong(parseFloat(prompt('Nhập số doanh thu:')))">Bài 6:Tính hoa hồng</button>
+    <button type="button" onclick="cuocienthoai(parseInt(prompt('Nhập thời gian gọi tháng vừa rồi:')))">Bài 7:Cước điện thoại</button>
+</form>
+<body>
+<script>
+    function chiahet(a , b){
+        if (a%b==0)
+            alert(+a+" Chia hêt cho " + b);
+        else
+            alert (+a+" KHÔNG chia hêt cho " + b)
+    }
+    function hocsinh(a){
+        if(a<16)
+            alert("Học sinh chưa đủ tuổi học lớp 10");
+        else
+            alert("Học sinh đủ tuổi học lớp 10");
+    }
+    function soam(a){
+        if(a<0)
+            alert("Số " + a+ " nhỏ hơn 0");
+        else
+            alert("Số " + a+ " lớn hơn 0");
+    }
+    function solonnhat(a , b, c){
+        let max=a;
+        if (b > max){
+            max = b;
+            if(c > max){
+                max = c;
+            }else{
+                max=b;
+            }
+        }else{
+            max=a;
+        }alert("Số lớn nhất là " +max);
+    }
+    function phanloai(a,b,c){
+        let tb = (a+b+c)/3;
+        if (tb<4){
+            alert("Học lực kém");
+        }else if(tb<5){
+            alert("Học lực yếu");
+        }else if(tb<6) {
+            alert("Học lực trung bình");
+        }else if(tb<7) {
+            alert("Học lực trung bình khá");
+        }else if(tb<8) {
+            alert("Học lực khá");
+        }else if(tb<9) {
+            alert("Học lực giỏi");
+        }else if(tb<10) {
+            alert("Học lực xuất sắc");
+        }
+    }
+    function hoahong(a){
+        let hh = 0;
+        if (a<10000000){
+            hh=a*0;
+        }else if (a<30000000){
+            hh=a*1.5/100;
+        }else if (a<90000000){
+            hh=a*2/100;
+        }else
+            hh=a*3/100;
+        alert("Tiền hoa hồng được hưởng là: " +hh);
+    }
+    function cuocienthoai(a){
+        let cdt = a*1500;
+        alert("Cước điện thoại tháng này là: "+cdt);
+    }
+</script>
+</body>
+</html>
